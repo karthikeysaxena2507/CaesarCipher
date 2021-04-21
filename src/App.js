@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import './App.css';
 
 function App() {
 
-  var [text, setText] = useState("");
-  var [cipher, setCipher] = useState("");
-  var [realTime, setRealTime] = useState("Enable");
-  var code, diff;
+  const [text, setText] = useState("");
+  const [cipher, setCipher] = useState("");
+  const [realTime, setRealTime] = useState("Enable");
+  let code, diff;
 
   const fun = (str) => {
     var temp = "", curr = str;
@@ -53,14 +52,14 @@ function App() {
   return (
     <div className="container">
       <h3> Plain Text </h3>
-      <textarea rows="15" cols="60" value={text} onChange={changeText}/>
+      <textarea rows="10" cols="60" value={text} onChange={changeText} placeholder="Enter plain Text"/>
       <div>
         <button onClick={convert}> Cipher </button>
         <button onClick={changeRealTime}> {realTime} Real Time </button>
         <button onClick={convert}> Decipher </button>
       </div>
       <h3> Ciphered Text </h3>
-      <textarea rows="15" cols="60" value={cipher} onChange={changeCipherText}/>
+      <textarea rows="10" cols="60" value={cipher} onChange={changeCipherText} placeholder="Enter Ciphered Text"/>
     </div>
   );
 }
